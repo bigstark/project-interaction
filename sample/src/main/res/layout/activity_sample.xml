@@ -11,8 +11,8 @@
         android:id="@+id/circle_loading_view"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:color="#FF0000"
-        app:radius="17dp"
+        app:circleColor="#FF0000"
+        app:circleRadius="17dp"
         />
 
 
