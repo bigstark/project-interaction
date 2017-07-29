@@ -55,8 +55,8 @@ public class CircleLoadingView extends View {
         }
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.CircleLoadingView);
-        color = ta.getColor(R.styleable.CircleLoadingView_color, COLOR_DEFAULT);
-        radius = ta.getDimensionPixelSize(R.styleable.CircleLoadingView_radius, RADIUS_DEFAULT);
+        color = ta.getColor(R.styleable.CircleLoadingView_circleColor, COLOR_DEFAULT);
+        radius = ta.getDimensionPixelSize(R.styleable.CircleLoadingView_circleRadius, RADIUS_DEFAULT);
         ta.recycle();
     }
 

@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -26,15 +27,15 @@ public class RandomTileLoadingView extends View {
     public static final int COLOR_DEFAULT = Color.parseColor("#7382C8");
 
     private boolean isRunning = false;
-
-    private float tileMargin;
-
-
     private ValueAnimator animator;
     private float frame = 0;
 
+
     private Paint paint = new Paint();
-    private int color = COLOR_DEFAULT;
+
+
+    private int tileColor = COLOR_DEFAULT;
+    private int tileMargin;
 
 
     private int[] from = {1, 0};
@@ -56,20 +57,22 @@ public class RandomTileLoadingView extends View {
 
     public RandomTileLoadingView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+
+        initAttrs(attrs);
         initValueAnimator();
         initPaint();
+    }
 
+    private void initAttrs(AttributeSet attrs) {
         if (attrs == null) {
             return;
         }
 
-        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.CircleLoadingView);
+        TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.RandomTileLoadingView);
         int marginDefault = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1, getResources().getDisplayMetrics());
         tileMargin = ta.getDimensionPixelSize(R.styleable.RandomTileLoadingView_tileMargin, marginDefault);
-        color = ta.getColor(R.styleable.RandomTileLoadingView_tileColor, COLOR_DEFAULT);
+        tileColor = ta.getColor(R.styleable.RandomTileLoadingView_tileColor, COLOR_DEFAULT);
         ta.recycle();
-
-        initPaint();
     }
 
     private void initValueAnimator() {
@@ -135,7 +138,7 @@ public class RandomTileLoadingView extends View {
 
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.FILL);
-        paint.setColor(color);
+        paint.setColor(tileColor);
     }
 
     @Override
@@ -174,12 +177,12 @@ public class RandomTileLoadingView extends View {
     }
 
     /**
-     * set tile color
+     * set tile tileColor
      *
-     * @param color : color of tile
+     * @param tileColor : tileColor of tile
      */
-    public void setColor(int color) {
-        this.color = color;
+    public void setTileColor(int tileColor) {
+        this.tileColor = tileColor;
         postInvalidate();
     }
 
