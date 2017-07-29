@@ -4,4 +4,9 @@
         <attr name="color" format="color"/>
         <attr name="radius" format="dimension"/>
     </declare-styleable>
+
+    <declare-styleable name="RandomTileLoadingView">
+        <attr name="tileColor" format="color"/>
+        <attr name="tileMargin" format="dimension"/>
+    </declare-styleable>
 </resources>
