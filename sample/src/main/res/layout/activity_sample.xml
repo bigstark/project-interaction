@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     >
 
     <com.bigstark.interaction.CircleLoadingView
@@ -15,12 +16,14 @@
         />
 
 
-    <com.bigstark.interaction.CircleLoadingCompleteView
+    <com.bigstark.interaction.RandomTileLoadingView
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/circle_loading_completion_view"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/random_tile_loading_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        app:tileColor="#00FF00"
+        app:tileMargin="10dp"
         />
 
 </LinearLayout>

@@ -3,8 +3,8 @@ package com.bigstark.interaction.sample;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.bigstark.interaction.CircleLoadingCompleteView;
 import com.bigstark.interaction.CircleLoadingView;
+import com.bigstark.interaction.RandomTileLoadingView;
 
 public class SampleActivity extends AppCompatActivity {
 
@@ -19,15 +19,7 @@ public class SampleActivity extends AppCompatActivity {
         clv.start();
 
 
-        CircleLoadingCompleteView clcv = (CircleLoadingCompleteView) findViewById(R.id.circle_loading_completion_view);
-        clcv.start();
-
-        clcv.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                CircleLoadingCompleteView clcv = (CircleLoadingCompleteView) findViewById(R.id.circle_loading_completion_view);
-                clcv.setLoadingComplete(true);
-            }
-        }, 5000);
+        RandomTileLoadingView rti = (RandomTileLoadingView) findViewById(R.id.random_tile_loading_view);
+        rti.start();
     }
 }
