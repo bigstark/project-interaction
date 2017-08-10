@@ -22,8 +22,8 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
-        app:tileColor="#00FF00"
-        app:tileMargin="10dp"
+        app:tileColor="#00AA00"
+        app:tileMargin="2dp"
         />
 
 </LinearLayout>
